@@ -37,7 +37,7 @@ export default {
 .title-header {
   color: white;
   width: 30%;
-  margin-right: 100px;
+  margin-right: 180px;
 
   .slogan {
     font-size: 50px;

@@ -1,6 +1,6 @@
 <template>
   <div class="header-img">
-    <img src="../assets/img/cuate.png" alt="" />
+    <img :src="require('@/assets/img/cuate.png')" alt="" />
   </div>
 </template>
 

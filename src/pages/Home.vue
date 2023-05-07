@@ -1,13 +1,18 @@
 <template>
-  <div><Header /></div>
+  <div>
+    <Header />
+    <FoodMainComponent />
+  </div>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import Header from "@/components//Header/Header.vue";
+import FoodMainComponent from "@/components/DisplayFood/FoodMainComponent.vue";
 export default {
   name: "HomePage",
   components: {
     Header,
+    FoodMainComponent,
   },
 };
 </script>
