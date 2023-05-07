@@ -3,26 +3,41 @@
     <input
       type="text"
       placeholder="Search food you love"
-      v-model="search_text"
-      @input="getSearch"
+      @input="onInputTextChanged($event.target.value)"
     />
     <input type="button" value="Search" />
+    <div class="modal" v-for="(meal, index) in apiData.meals" :key="index">
+      <div class="container-modal">
+        <div class="wrapper-img">
+          <img :src="meal.strMealThumb" alt="" />
+        </div>
+        <p>{{ meal.strMeal }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { useStore } from "vuex";
+import { computed, ref, onMounted } from "vue";
+
 export default {
   name: "InputSearchHeader",
+  setup() {
+    const store = useStore();
+    const query = ref("beef");
+    const apiData = computed(() => store.state.apiData);
 
-  data() {
-    return {
-      search_text: "",
+    const onInputTextChanged = (value) => {
+      query.value = value;
+      store.dispatch("fetchApiData", query.value);
     };
-  },
-  methods: {
-    getSearch() {
-      console.log(this.search_text);
-    },
+    onMounted(onInputTextChanged);
+
+    return {
+      onInputTextChanged,
+      apiData,
+    };
   },
 };
 </script>
