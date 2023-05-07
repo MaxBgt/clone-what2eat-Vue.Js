@@ -6,14 +6,6 @@
       @input="onInputTextChanged($event.target.value)"
     />
     <input type="button" value="Search" />
-    <div class="modal" v-for="(meal, index) in apiData.meals" :key="index">
-      <div class="container-modal">
-        <div class="wrapper-img">
-          <img :src="meal.strMealThumb" alt="" />
-        </div>
-        <p>{{ meal.strMeal }}</p>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -25,7 +17,7 @@ export default {
   name: "InputSearchHeader",
   setup() {
     const store = useStore();
-    const query = ref("beef");
+    const query = ref("");
     const apiData = computed(() => store.state.apiData);
 
     const onInputTextChanged = (value) => {
@@ -44,6 +36,7 @@ export default {
 
 <style scoped lang="scss">
 .input-header {
+  position: relative;
   margin-top: 40px;
   input[type="text"] {
     padding: 15px;

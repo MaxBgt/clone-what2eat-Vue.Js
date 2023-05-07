@@ -1,6 +1,17 @@
 <template>
-  <div class="card-container">
-    <div class="card-meal" v-for="(meal, index) in sliced_data" :key="index">
+  <div class="card-container" v-if="apiData.meals != null">
+    <div class="card-meal" v-for="(meal, index) in apiData.meals" :key="index">
+      <div class="image-container">
+        <img :src="meal.strMealThumb" :alt="meal.idMeal" class="meal-img" />
+        <p class="instructions">{{ meal.strTags }}</p>
+      </div>
+      <div class="desc">
+        <h2 class="desc-title">{{ meal.strMeal }}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="card-container" v-else>
+    <div class="card-meal" v-for="(meal, index) in meals_data" :key="index">
       <div class="image-container">
         <img :src="meal.strMealThumb" :alt="meal.idMeal" class="meal-img" />
         <p class="instructions">{{ meal.strTags }}</p>
@@ -13,23 +24,27 @@
 </template>
 
 <script>
+import { useStore } from "vuex";
 import api from "/src/api/api.js";
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 export default {
   name: "FoodCard",
   setup() {
     let meals_data = ref([]);
     let sliced_data = ref([]);
+    const store = useStore();
+    const apiData = computed(() => store.state.apiData);
+
     const getData = async () => {
       const res = await api.get("/api/json/v1/1/search.php?s=");
       meals_data.value = res.data.meals;
-      sliced_data.value = meals_data.value.slice(0, 9);
     };
     onMounted(getData);
 
     return {
       meals_data,
       sliced_data,
+      apiData,
     };
   },
 };
