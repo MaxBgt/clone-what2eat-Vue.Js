@@ -7,16 +7,21 @@
         What2Eat is a courier service in which authentic home cook is delivered
         to a customer
       </p>
+      <div class="input-header">
+        <InputSearchHeader />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import HeaderImg from "./HeaderImg.vue";
+import InputSearchHeader from "./InputSearchHeader.vue";
 export default {
   name: "HeaderElements",
   components: {
     HeaderImg,
+    InputSearchHeader,
   },
 };
 </script>
@@ -32,7 +37,7 @@ export default {
 .title-header {
   color: white;
   width: 30%;
-  margin-right: 35px;
+  margin-right: 100px;
 
   .slogan {
     font-size: 50px;

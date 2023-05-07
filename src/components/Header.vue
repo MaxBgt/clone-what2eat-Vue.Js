@@ -19,6 +19,7 @@ export default {
 
 <style scoped lang="scss">
 .header {
+  position: static;
   height: 60vh;
   background-color: #1ac073;
 }
