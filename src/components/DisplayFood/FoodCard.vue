@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="card-container" v-else>
-    <div class="card-meal" v-for="(meal, index) in meals_data" :key="index">
+    <div class="card-meal" v-for="(meal, index) in sliced_data" :key="index">
       <div class="image-container">
         <img :src="meal.strMealThumb" :alt="meal.idMeal" class="meal-img" />
         <p class="instructions">{{ meal.strTags }}</p>
@@ -38,6 +38,7 @@ export default {
     const getData = async () => {
       const res = await api.get("/api/json/v1/1/search.php?s=");
       meals_data.value = res.data.meals;
+      sliced_data.value = meals_data.value.slice(0, 6);
     };
     onMounted(getData);
 

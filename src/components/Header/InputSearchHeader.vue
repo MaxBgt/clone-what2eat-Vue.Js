@@ -11,7 +11,7 @@
 
 <script>
 import { useStore } from "vuex";
-import { computed, ref, onMounted } from "vue";
+import { computed, ref } from "vue";
 
 export default {
   name: "InputSearchHeader",
@@ -24,11 +24,10 @@ export default {
       query.value = value;
       store.dispatch("fetchApiData", query.value);
     };
-    onMounted(onInputTextChanged);
 
     return {
-      onInputTextChanged,
       apiData,
+      onInputTextChanged,
     };
   },
 };
