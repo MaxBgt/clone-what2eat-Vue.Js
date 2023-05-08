@@ -127,5 +127,17 @@ export default {
       }
     }
   }
+  @media (max-width: 768px) {
+    .card-meal {
+      width: 48%;
+    }
+  }
+
+  // Styles pour les mobiles
+  @media (max-width: 480px) {
+    .card-meal {
+      width: 100%;
+    }
+  }
 }
 </style>

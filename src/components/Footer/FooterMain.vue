@@ -18,5 +18,13 @@ export default {
 .footer {
   height: 10vh;
   background-color: #1ac073;
+
+  @media (max-width: 1024px) {
+    height: 15vh;
+  }
+
+  @media (max-width: 768px) {
+    height: 20vh;
+  }
 }
 </style>

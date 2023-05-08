@@ -33,20 +33,41 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  @media (max-width: 900px) {
+    height: 91%;
+    flex-direction: column;
+  }
 }
+
 .title-header {
   color: white;
   width: 30%;
-  margin-right: 180px;
+  margin-right: 170px;
+
+  @media (max-width: 900px) {
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+  }
 
   .slogan {
     font-size: 50px;
     margin-top: 0;
     margin-bottom: 2px;
     font-weight: 400;
+
+    @media (max-width: 900px) {
+      font-size: 30px;
+    }
   }
+
   .description {
     font-size: 12px;
+
+    @media (max-width: 900px) {
+      font-size: 10px;
+    }
   }
 }
 </style>

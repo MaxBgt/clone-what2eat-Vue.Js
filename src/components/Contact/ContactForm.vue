@@ -32,6 +32,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 30em;
+    box-sizing: border-box;
 
     input,
     .textarea {
@@ -46,6 +47,23 @@ export default {
       display: flex;
       justify-content: space-between;
       margin-bottom: 35px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    form {
+      width: 100%;
+      padding: 0 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 5%;
+    margin-right: 5%;
+
+    form {
+      width: 100%;
+      padding: 0 10px;
     }
   }
 }

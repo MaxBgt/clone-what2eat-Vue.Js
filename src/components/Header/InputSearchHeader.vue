@@ -36,7 +36,8 @@ export default {
 <style scoped lang="scss">
 .input-header {
   position: relative;
-  margin-top: 40px;
+  margin-top: 30px;
+
   input[type="text"] {
     padding: 15px;
     border-top-left-radius: 8px;
@@ -48,7 +49,18 @@ export default {
       border: none;
       outline: none;
     }
+
+    @media (max-width: 1024px) {
+      width: 60%;
+      padding: 10px;
+    }
+
+    @media (max-width: 768px) {
+      width: 50%;
+      padding: 5px;
+    }
   }
+
   input[type="button"] {
     border: none;
     padding: 15px;
@@ -57,6 +69,14 @@ export default {
     border-bottom-right-radius: 8px;
     color: #ffffff;
     cursor: pointer;
+
+    @media (max-width: 1024px) {
+      padding: 10px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 5px;
+    }
   }
 }
 </style>

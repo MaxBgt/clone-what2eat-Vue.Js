@@ -27,5 +27,22 @@ export default {
   .para {
     font-size: 11px;
   }
+
+  @media (max-width: 1024px) {
+    width: 50%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    text-align: center;
+
+    .title {
+      padding-top: 20px;
+    }
+  }
 }
 </style>
