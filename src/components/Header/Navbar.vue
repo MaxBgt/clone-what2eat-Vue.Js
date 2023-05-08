@@ -1,9 +1,15 @@
 <template>
   <div class="nav-container">
-    <div class="title">WHAT2EAT</div>
+    <router-link to="/" class="router-link">
+      <div class="title">WHAT2EAT</div>
+    </router-link>
     <div class="nav-elements">
-      <h2 class="nav-title">Home</h2>
-      <h2 class="nav-title">About</h2>
+      <router-link to="/" class="router-link">
+        <h2 class="nav-title">Home</h2>
+      </router-link>
+      <router-link to="/About" class="router-link">
+        <h2 class="nav-title">About</h2>
+      </router-link>
       <h2 class="nav-title">Blog</h2>
       <h2 class="nav-title">Contact</h2>
     </div>
@@ -36,6 +42,10 @@ export default {
       font-weight: 400;
       cursor: pointer;
     }
+  }
+  .router-link {
+    text-decoration: none;
+    color: #ffffff;
   }
 }
 </style>

@@ -1,16 +1,14 @@
 <template>
   <Wrapper>
-    <div id="app"><Home /></div>
+    <div id="app"><router-view></router-view></div>
   </Wrapper>
 </template>
 
 <script>
-import Home from "./pages/Home.vue";
 import Wrapper from "./components/Wrapper.vue";
 export default {
   name: "App",
   components: {
-    Home,
     Wrapper,
   },
 };
